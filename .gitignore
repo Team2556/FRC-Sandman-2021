@@ -135,7 +135,6 @@ $RECYCLE.BIN/
 *.lnk
 
 ### Gradle ###
-.gradle
 /build/
 
 # Ignore Gradle GUI config
@@ -159,3 +158,5 @@ imgui.ini
 
 
 # End of https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
