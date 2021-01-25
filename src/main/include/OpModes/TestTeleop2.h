@@ -3,13 +3,9 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #pragma once
+#include "OpMode.h"
 
-class Drivebase {
+class TestTeleop2 : public OpMode {
  public:
-  Drivebase();
-  // reference frame for robot is: +X Right, +Y Forward, +theta
-  void Drive(float xSpeed, float ySpeed, float rotate, float gyro);
-
-  void GyroDrive();
-  void FieldOrientedDrive();
+  TestTeleop2();
 };

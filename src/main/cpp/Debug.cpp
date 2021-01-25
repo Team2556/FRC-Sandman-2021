@@ -4,4 +4,22 @@
 
 #include "Debug.h"
 
-Debug::Debug() = default;
+Debug::Debug(std::string name) 
+{
+    table = nt::NetworkTableInstance::GetDefault().GetTable(name);
+}
+
+void Debug::PutString(std::string key, std::string value)
+{
+    table->PutString(key, value);
+}
+
+void Debug::PutNumber(std::string key, float value)
+{
+    table->PutNumber(key, value);
+}
+
+void Debug::PutBoolean(std::string key, bool value)
+{
+    table->PutBoolean(key, value);
+}

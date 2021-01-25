@@ -4,12 +4,15 @@
 
 #pragma once
 
-class Drivebase {
+class OpMode {
  public:
-  Drivebase();
-  // reference frame for robot is: +X Right, +Y Forward, +theta
-  void Drive(float xSpeed, float ySpeed, float rotate, float gyro);
+  OpMode(); // 
+  
 
-  void GyroDrive();
-  void FieldOrientedDrive();
+  void Start(); // overide this
+
+  void Run(); // overide this
+
+  bool Complete(); // override this
+
 };

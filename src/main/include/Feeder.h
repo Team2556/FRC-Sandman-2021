@@ -7,4 +7,19 @@
 class Feeder {
  public:
   Feeder();
+
+  // Intake
+  void SetIntake(bool Extended);
+  bool IsExtended();
+  void KeepExtending(); // used to keep intake moving to target. Only needed if we use a motor to exend rather than pistons
+
+  void RunIntake();
+  void RunIntake(float speed); // positive speed is pulling in, negative is out
+
+  // Hopper
+  void SpinHopper();
+  void SpinHopper(float speed);
+
+  void KickUp();
+  void KickUp(float Speed); // positive is into the shooter, negative is out
 };

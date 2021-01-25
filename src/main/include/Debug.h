@@ -4,7 +4,16 @@
 
 #pragma once
 
+#include "networktables/NetworkTable.h"
+#include "networktables/NetworkTableInstance.h"
+
 class Debug {
  public:
-  Debug();
+  Debug(std::string name);
+
+  void PutString(std::string key, std::string value);
+  void PutNumber(std::string key, float value);
+  void PutBoolean(std::string key, bool value);
+
+  std::shared_ptr<NetworkTable> table;
 };
