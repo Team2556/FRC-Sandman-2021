@@ -9,7 +9,7 @@
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
-#include <ctre\Phoenix.h>
+#include <ctre/Phoenix.h>
 
 class Robot : public frc::TimedRobot {
  public:
