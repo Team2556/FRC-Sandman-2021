@@ -4,9 +4,7 @@
 
 #pragma once
 
-#include "Shooter.h"
-
-Shooter::Shooter(Robot *pRobot, Feeder *pFeeder) {
-    this->pRobot = pRobot;
-    this->pFeeder = pFeeder;
-}
+class PIDMath {
+ public:
+  PIDMath();
+};

@@ -2,11 +2,6 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-#pragma once
+#include "PIDMath.h"
 
-#include "Shooter.h"
-
-Shooter::Shooter(Robot *pRobot, Feeder *pFeeder) {
-    this->pRobot = pRobot;
-    this->pFeeder = pFeeder;
-}
+PIDMath::PIDMath() = default;
