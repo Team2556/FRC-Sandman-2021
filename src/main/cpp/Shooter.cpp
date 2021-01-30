@@ -6,7 +6,7 @@
 
 #include "Shooter.h"
 
-Shooter::Shooter(Robot *pRobot, Feeder *pFeeder) {
-    this->pRobot = pRobot;
-    this->pFeeder = pFeeder;
+Shooter::Shooter(OpMode *opMode) {
+    robot = opMode->getRobot();
+    feeder = opMode->getFeeder();
 }

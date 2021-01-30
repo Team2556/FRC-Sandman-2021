@@ -6,28 +6,30 @@
 
 #include "Robot.h"
 #include "Feeder.h"
+#include "OpMode.h"
 
 class Shooter {
   public:
-    Robot *pRobot;
-    Feeder *pFeeder;
+    OpMode *opMode;
+    Robot *robot;
+    Feeder *feeder;
 
-    Shooter(Robot *pRobot, Feeder *pFeeder);
+    Shooter(OpMode *opMode);
 
     // Wheel Functions
-    bool SpinUp();
-    void SetSpinSpeed(float speed/*speed in rpm*/);
-    void StopSpin();
-    bool TargetSpeed();
+    bool spinUp();
+    void setSpinSpeed(float speed/*speed in rpm*/);
+    void stopSpin();
+    bool targetSpeed();
 
-    //Hood
-    void MoveHood();
-    bool SetHood(int angle /*units is encoder ticks*/);
-    bool HoodAimed();
-    void RotateHood(float speed);
+    // Hood
+    void moveHood();
+    bool setHood(int angle /*units is encoder ticks*/);
+    bool hoodAimed();
+    void rotateHood(float speed);
 
     // Turret Functions
-    bool Aim();
-    bool IsAimed();
-    void RotateTurret(float speed);
+    bool aim();
+    bool isAimed();
+    void rotateTurret(float speed);
 };

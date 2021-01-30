@@ -4,9 +4,11 @@
 
 #pragma once
 
+#include "OpMode.h"
+
 class Feeder {
  public:
-  Feeder();
+  Feeder(OpMode *opMode);
 
   // Intake
   void SetIntake(bool Extended);

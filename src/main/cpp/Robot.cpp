@@ -8,8 +8,6 @@
 
 #include <frc/smartdashboard/SmartDashboard.h>
 
-
-
 void Robot::RobotInit() 
 {
   
@@ -34,8 +32,7 @@ void Robot::AutonomousPeriodic()
 
 void Robot::TeleopInit() 
 {
-  TeleopModes.push_back(Teleop1);
-  TeleopModes.push_back(Teleop2);
+
 }
 
 void Robot::TeleopPeriodic() 

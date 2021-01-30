@@ -4,10 +4,22 @@
 
 #pragma once
 
+#include "Robot.h"
+#include "Feeder.h"
+#include "Shooter.h"
+#include "OpMode.h"
+
 class OpMode {
  public:
-  OpMode(); // 
-  
+  Robot *robot;
+  Feeder *feeder;
+  Shooter *shooter;
+
+  Robot *getRobot();
+  Feeder *getFeeder();
+  Shooter *getShooter();
+
+  OpMode(Robot *robot);
 
   void Start(); // overide this
 
