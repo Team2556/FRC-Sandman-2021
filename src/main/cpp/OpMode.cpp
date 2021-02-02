@@ -15,6 +15,13 @@ OpMode::OpMode(Robot *robot) {
 
 // Bunch of getters
 
+Vision *OpMode::getVision() {
+    if (vision == nullptr) { // If nullptr, instantiate it.
+        vision = new Vision();
+    }
+    return vision;
+}
+
 Feeder *OpMode::getFeeder() {
     if (feeder == nullptr) { // If nullptr, instantiate it.
         feeder = new Feeder(this);

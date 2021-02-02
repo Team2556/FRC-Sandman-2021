@@ -8,16 +8,19 @@
 #include "Feeder.h"
 #include "Shooter.h"
 #include "OpMode.h"
+#include "Vision.h"
 
 class OpMode {
  public:
   Robot *robot;
   Feeder *feeder;
   Shooter *shooter;
+  Vision *vision;
 
   Robot *getRobot();
   Feeder *getFeeder();
   Shooter *getShooter();
+  Vision *getVision();
 
   OpMode(Robot *robot);
 
