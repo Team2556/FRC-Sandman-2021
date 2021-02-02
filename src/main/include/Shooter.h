@@ -7,12 +7,14 @@
 #include "Robot.h"
 #include "Feeder.h"
 #include "OpMode.h"
+#include "Debug.h"
 
 class Shooter {
   public:
     OpMode *opMode;
     Robot *robot;
     Feeder *feeder;
+    Debug *debug;
 
     Shooter(OpMode *opMode);
 

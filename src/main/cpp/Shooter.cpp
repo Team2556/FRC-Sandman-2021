@@ -9,4 +9,26 @@
 Shooter::Shooter(OpMode *opMode) {
     robot = opMode->getRobot();
     feeder = opMode->getFeeder();
+    debug = new Debug("/Subsystems/Shooter");
 }
+
+bool Shooter::spinUp() {
+    
+}
+
+// Wheel Functions
+// bool spinUp();
+// void setSpinSpeed(float speed/*speed in rpm*/);
+// void stopSpin();
+// bool targetSpeed();
+
+// // Hood
+// void moveHood();
+// bool setHood(int angle /*units is encoder ticks*/);
+// bool hoodAimed();
+// void rotateHood(float speed);
+
+// // Turret Functions
+// bool aim();
+// bool isAimed();
+// void rotateTurret(float speed);
