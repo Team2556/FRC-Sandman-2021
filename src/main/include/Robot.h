@@ -13,6 +13,8 @@
 #include <frc/smartdashboard/SendableChooser.h>
 
 #include <ctre/Phoenix.h>
+#include "OI.h"
+
 
 class Robot : public frc::TimedRobot {
  public:
@@ -29,6 +31,8 @@ class Robot : public frc::TimedRobot {
 
   std::vector<OpMode> AutoModes;
   std::vector<OpMode> TeleopModes;
+
+  OI DriverCMD;
 
   TestTeleop1 Teleop1;
   TestTeleop2 Teleop2;

@@ -4,4 +4,12 @@
 
 #include "OI.h"
 
-OI::OI() = default;
+OI::OI()
+{
+    
+}
+
+void OI::testFunction()
+{
+    return;
+}
