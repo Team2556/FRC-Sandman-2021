@@ -10,21 +10,16 @@
 class OI {
  public:
   OI();
-<<<<<<< .mine
+
+  void testFunction();
 
   float fForward();
   float fStrafe();
   float fRotate();
 
-
-
-=======
-
-  void testFunction();
-
   protected:
     frc::XboxController   Xbox1{XBOX_ONE};
     frc::XboxController   Xbox2{XBOX_TWO};
     frc::XboxController   Xbox3{XBOX_THREE};
->>>>>>> .theirs
+
 };

@@ -4,8 +4,13 @@
 #include "Robot.h"
 #include "Drivebase.h"
 
-Drivebase::Drivebase() = default;
+Drivebase::Drivebase(Robot * pRobot) {
+    this->pRobot = pRobot;
+}
 
-void Drivebase::Drive(float xSpeed, float ySpeed, float rotate, float gyro){
-    
+void Drivebase::Drive() {
+    float fForward = pRobot->DriverCMD.fForward();
+    float fRotate = pRobot->DriverCMD.fRotate();
+
+    pRobot->WestCoastDrive.ArcadeDrive(fForward, fRotate);
 }

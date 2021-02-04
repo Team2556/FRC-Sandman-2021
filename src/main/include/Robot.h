@@ -15,9 +15,6 @@
 #include <ctre/Phoenix.h>
 #include "OI.h"
 
-
-#include <frc/WPILib.h>
-
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include "ctre\Phoenix.h"
@@ -32,6 +29,8 @@
 #include "ctre/Phoenix.h"
 #include "networktables/NetworkTable.h"
 #include "networktables/NetworkTableInstance.h"
+#include "frc/SpeedControllerGroup.h"
+#include "frc/drive/DifferentialDrive.h"
 
 class Robot : public frc::TimedRobot {
  public:
@@ -51,6 +50,15 @@ class Robot : public frc::TimedRobot {
 
   OI DriverCMD;
 
+   rev::CANSparkMax            MotorControl_L1{LEFT_DRIVE_1, rev::CANSparkMax::MotorType::kBrushless};
+   rev::CANSparkMax            MotorControl_L2{LEFT_DRIVE_2, rev::CANSparkMax::MotorType::kBrushless};
+   rev::CANSparkMax            MotorControl_R1{RIGHT_DRIVE_1, rev::CANSparkMax::MotorType::kBrushless};
+   rev::CANSparkMax            MotorControl_R2{RIGHT_DRIVE_2, rev::CANSparkMax::MotorType::kBrushless};
+
+   frc::SpeedControllerGroup LeftDrive{MotorControl_L1, MotorControl_L2};
+   frc::SpeedControllerGroup RightDrive{MotorControl_R1, MotorControl_R2};
+
+   frc::DifferentialDrive WestCoastDrive{LeftDrive, RightDrive};
   TestTeleop1 Teleop1;
   TestTeleop2 Teleop2;
   

@@ -13,3 +13,18 @@ void OI::testFunction()
 {
     return;
 }
+
+float OI::fForward() {
+    float fY = Xbox1.GetY(frc::XboxController::kLeftHand);
+    return fY;
+}
+
+float OI::fRotate() {
+    float fR = Xbox1.GetX(frc::XboxController::kRightHand);
+    return fR;
+}
+
+float OI::fStrafe() {
+    float fS = Xbox1.GetX(frc::XboxController::kLeftHand);
+    return fS;
+}

@@ -7,12 +7,14 @@
 #include <iostream>
 
 #include <frc/smartdashboard/SmartDashboard.h>
+#include "Drivebase.h"
 
-
+Drivebase * Drive;
 
 void Robot::RobotInit() 
 {
   DriverCMD.testFunction();
+  Drive = new Drivebase(this);
 }
 
 
@@ -40,7 +42,7 @@ void Robot::TeleopInit()
 
 void Robot::TeleopPeriodic() 
 {
-
+    Drive->Drive();
 }
 
 void Robot::DisabledInit() {}
