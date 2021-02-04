@@ -16,6 +16,23 @@
 #include "OI.h"
 
 
+#include <frc/WPILib.h>
+
+#include <frc/TimedRobot.h>
+#include <frc/smartdashboard/SendableChooser.h>
+#include "ctre\Phoenix.h"
+#include "AHRS.h"
+#include <frc/PowerDistributionPanel.h>
+#include <iostream>
+#include "rev/CANSparkMax.h"
+//#include "rev/ColorSensorV3.h"
+#include <frc/util/Color.h>
+#include <frc/DriverStation.h>
+#include "rev/CANSparkMax.h"
+#include "ctre/Phoenix.h"
+#include "networktables/NetworkTable.h"
+#include "networktables/NetworkTableInstance.h"
+
 class Robot : public frc::TimedRobot {
  public:
   void RobotInit() override;
@@ -36,6 +53,7 @@ class Robot : public frc::TimedRobot {
 
   TestTeleop1 Teleop1;
   TestTeleop2 Teleop2;
+  
  private:
   
 };
