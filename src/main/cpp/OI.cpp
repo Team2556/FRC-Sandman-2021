@@ -20,11 +20,6 @@ float OI::fForward() {
 }
 
 float OI::fRotate() {
-    float fR = Xbox1.GetX(frc::XboxController::kRightHand);
+    float fR = Xbox1.GetX(frc::XboxController::kLeftHand);
     return fR;
-}
-
-float OI::fStrafe() {
-    float fS = Xbox1.GetX(frc::XboxController::kLeftHand);
-    return fS;
 }

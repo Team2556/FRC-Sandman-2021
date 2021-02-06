@@ -14,7 +14,6 @@ class OI {
   void testFunction();
 
   float fForward();
-  float fStrafe();
   float fRotate();
 
   protected:

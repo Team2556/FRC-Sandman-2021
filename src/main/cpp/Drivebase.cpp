@@ -11,6 +11,8 @@ Drivebase::Drivebase(Robot * pRobot) {
 void Drivebase::Drive() {
     float fForward = pRobot->DriverCMD.fForward();
     float fRotate = pRobot->DriverCMD.fRotate();
-
+    float dampener = 0.5;
+    fForward = fForward * dampener;
+    fRotate = fRotate * dampener;
     pRobot->WestCoastDrive.ArcadeDrive(fForward, fRotate);
 }
