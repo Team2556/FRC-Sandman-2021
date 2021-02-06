@@ -55,4 +55,29 @@
 #define XBOX_TWO 1
 #define XBOX_THREE 2
 
-#define         CPSERVO                 0
+#define DRIVE_LEFT_FRONT 1
+#define DRIVE_RIGHT_FRONT 2
+#define DRIVE_LEFT_REAR 3
+#define DRIVE_RIGHT_REAR 4
+
+
+#define FEEDER_HIGH 9
+#define FEEDER_LOW 10
+#define CAN_INTAKE 11
+
+
+// Xbox Controllers
+
+#define XBOX_ONE 1 
+#define XBOX_TWO 0
+
+
+
+
+
+// PCM Ports
+#define  INTAKE_IN  0
+#define  INTAKE_OUT 1
+
+
+

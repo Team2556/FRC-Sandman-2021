@@ -3,18 +3,16 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "Robot.h"
-
 #include <iostream>
-
 #include <frc/smartdashboard/SmartDashboard.h>
-#include "Drivebase.h"
-
-Drivebase * Drive;
+#include "Feeder.h"
+//Doesn't work in Robot.h because it causes an infinite loop
+Feeder * pFeeder;
 
 void Robot::RobotInit() 
 {
-  DriverCMD.testFunction();
-  Drive = new Drivebase(this);
+  pFeeder = new Feeder(this);
+  pOI = new OI();
 }
 
 
@@ -42,7 +40,18 @@ void Robot::TeleopInit()
 
 void Robot::TeleopPeriodic() 
 {
-    Drive->Drive();
+  pFeeder->BottomFeeder(pOI->BottomFeeder());
+  pFeeder->TopFeeder(pOI->TopFeeder());
+  pFeeder->IntakeExtendRetract(pOI->IntakeExtension());
+  
+  if (pOI->IntakeExtension())
+  {
+  pFeeder->RunIntake(pOI->RunIntake());
+  }
+  else
+  {
+  Intake_Motor.Set(0);
+  }
 }
 
 void Robot::DisabledInit() {}

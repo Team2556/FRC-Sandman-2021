@@ -13,6 +13,7 @@
 #include <frc/smartdashboard/SendableChooser.h>
 
 #include <ctre/Phoenix.h>
+#include "RobotMap.h"
 #include "OI.h"
 
 #include <frc/TimedRobot.h>
@@ -29,11 +30,17 @@
 #include "ctre/Phoenix.h"
 #include "networktables/NetworkTable.h"
 #include "networktables/NetworkTableInstance.h"
+#include "frc/XboxController.h"
+#include "frc/DoubleSolenoid.h"
+
+#include "Debug.h"
+#include "OI.h"
 #include "frc/SpeedControllerGroup.h"
 #include "frc/drive/DifferentialDrive.h"
 
 class Robot : public frc::TimedRobot {
  public:
+
   void RobotInit() override;
   void RobotPeriodic() override;
   void AutonomousInit() override;
@@ -61,6 +68,24 @@ class Robot : public frc::TimedRobot {
    frc::DifferentialDrive WestCoastDrive{LeftDrive, RightDrive};
   TestTeleop1 Teleop1;
   TestTeleop2 Teleop2;
+
+  float TopFeederSpeed;
+  float BottomFeederSpeed;
+
+
+  
+  OI * pOI;
+//Feeder
+//Motors
+  WPI_TalonSRX      Feeder_High_Motor{FEEDER_HIGH}; //Motor 9
+  WPI_TalonSRX      Feeder_Low_Motor{FEEDER_LOW}; //Motor 10
+  WPI_TalonSRX      Intake_Motor{CAN_INTAKE}; //Motor 11
+
+
+
+
+frc::DoubleSolenoid   Intake_Solenoid{CAN_PCM, INTAKE_OUT, INTAKE_IN};
+
   
  private:
   
