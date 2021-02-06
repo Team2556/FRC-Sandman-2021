@@ -19,8 +19,15 @@ class OI {
   int BottomFeeder();
   double TopFeeder();
   bool extended;
-  //Xbox Controllers mess up the program running.
+  void testFunction();
+  
+  
+  
+  float fForward();
+  float fRotate();
+
+protected:
   frc::XboxController     Xbox1{XBOX_ONE};
   frc::XboxController     Xbox2{XBOX_TWO};
-
+  frc::XboxController     Xbox3{XBOX_THREE};
 };
