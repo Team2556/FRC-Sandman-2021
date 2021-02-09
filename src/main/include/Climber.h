@@ -4,7 +4,21 @@
 
 #pragma once
 
+#include "Robot.h"
+
+
 class Climber {
- public:
-  Climber();
+  public:
+    Climber(Robot * pRobot);
+  
+    Robot * pRobot;
+
+    void RunWinch(float speed);// +speed is up
+
+    void ClimberUpDown(bool up); // if up is true arms are up, else arms are down
+
+  private:
+    WPI_TalonSRX WinchMotor{CLIMB_WINCH};
+    frc::DoubleSolenoid ClimbSolenoid{CAN_PCM, CLIMB_UP, CLIMB_DOWN};
+
 };
