@@ -51,4 +51,11 @@
 #define         DIO_US_RANGE_TRIGGER    0
 #define         DIO_US_RANGE_PULSE      1
 
-#define         CPSERVO                 0
+
+
+#define DRIVE_LEFT_FRONT 1
+#define DRIVE_RIGHT_FRONT 2
+#define DRIVE_LEFT_REAR 3
+#define DRIVE_RIGHT_REAR 4
+
+
