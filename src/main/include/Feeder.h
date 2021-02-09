@@ -5,6 +5,7 @@
 #pragma once //Things under pragma once only get included once. 
 
 #include "Robot.h"
+#include "RobotMap.h"
 
 
 class Feeder {
@@ -30,4 +31,11 @@ class Feeder {
 
   void TopFeeder(double speed);
   void BottomFeeder(int speed);
+  WPI_TalonSRX      Feeder_High_Motor{FEEDER_HIGH}; //Motor 9
+  WPI_TalonSRX      Feeder_Low_Motor{FEEDER_LOW}; //Motor 10
+  WPI_TalonSRX      Intake_Motor{CAN_INTAKE}; //Motor 11
+
+  frc::DoubleSolenoid   Intake_Solenoid{CAN_PCM, INTAKE_OUT, INTAKE_IN};
+  private:
+
 };

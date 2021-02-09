@@ -54,7 +54,7 @@ void Robot::TeleopPeriodic()
   }
   else
   {
-  Intake_Motor.Set(0);
+  pFeeder->Intake_Motor.Set(0);
   }
 }
 

@@ -12,18 +12,18 @@ Feeder::Feeder(Robot * pRobot)
 // void Feeder::SetIntake()
 // {
 // pRobot->Extended = false;
-
-// }
+    //
+    // Feeder::IntakeExtendRetract(true) }
 
 void Feeder::IntakeExtendRetract(bool Extended)
 {
     if (Extended == false)
     {
-    pRobot->Intake_Solenoid.Set(frc::DoubleSolenoid::Value::kForward);
+    Intake_Solenoid.Set(frc::DoubleSolenoid::Value::kForward);
     }
     else
     {
-    pRobot->Intake_Solenoid.Set(frc::DoubleSolenoid::Value::kReverse);    
+    Intake_Solenoid.Set(frc::DoubleSolenoid::Value::kReverse);    
     }
 }
 
@@ -33,13 +33,13 @@ void Feeder::RunIntake(int speed)
     printf("in intake, speed is %d", speed);
 switch (speed){
 case 1: 
-    pRobot->Intake_Motor.Set(0.75);
+    Intake_Motor.Set(0.75);
     break;
 case -1:
-    pRobot->Intake_Motor.Set(-0.75);
+    Intake_Motor.Set(-0.75);
     break;
 case 0:
-    pRobot->Intake_Motor.Set(0);
+    Intake_Motor.Set(0);
     break;
 }
 
@@ -49,10 +49,10 @@ case 0:
 
 void Feeder::BottomFeeder(int speed)
 {
-    pRobot->Feeder_Low_Motor.Set(speed);
+    Feeder_Low_Motor.Set(speed);
 }   
 
 void Feeder::TopFeeder(double speed)
 {
-    pRobot->Feeder_High_Motor.Set(speed);
+    Feeder_High_Motor.Set(speed);
 }
