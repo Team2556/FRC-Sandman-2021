@@ -25,9 +25,11 @@ class OI {
   
   float fForward();
   float fRotate();
+  int runwinch();
 
 protected:
   frc::XboxController     Xbox1{XBOX_ONE};
   frc::XboxController     Xbox2{XBOX_TWO};
   frc::XboxController     Xbox3{XBOX_THREE};
+
 };

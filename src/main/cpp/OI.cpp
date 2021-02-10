@@ -123,3 +123,13 @@ float OI::fRotate() {
     float fR = Xbox1.GetX(frc::XboxController::kLeftHand);
     return fR;
 }
+
+int OI::runwinch() 
+{
+    if (Xbox1.GetBButton())
+    {
+        
+    }
+
+ 
+}

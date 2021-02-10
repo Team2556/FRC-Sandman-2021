@@ -13,7 +13,7 @@ class Climber {
   
     Robot * pRobot;
 
-    void RunWinch(float speed);// +speed is up
+    void RunWinch(int speed);// +speed is up
 
     void ClimberUpDown(bool up); // if up is true arms are up, else arms are down
 

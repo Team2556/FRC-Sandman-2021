@@ -11,7 +11,7 @@ Climber::Climber(Robot * pRobot)
 
 
 
-void Climber::RunWinch(float speed)
+void Climber::RunWinch(int speed)
 {
     WinchMotor.Set(speed);
 }

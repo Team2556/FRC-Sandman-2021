@@ -7,15 +7,23 @@
 #include <frc/smartdashboard/SmartDashboard.h>
 #include "Feeder.h"
 #include "Drivebase.h"
+#include "CLimber.h"
 //Doesn't work in Robot.h because it causes an infinite loop
 Feeder * pFeeder;
 Drivebase * Drive;
+
+Climber * pClimber;
+
+
 void Robot::RobotInit() 
 {
   pFeeder = new Feeder(this);
   pOI = new OI();
   DriverCMD.testFunction();
   Drive = new Drivebase(this);
+  pClimber = new Climber(this);
+
+
 }
 
 
