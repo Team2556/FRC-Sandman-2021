@@ -5,30 +5,33 @@
 #pragma once
 
 #include "Shooter.h"
+#include "RobotMap.h"
 
-Shooter::Shooter(OpMode *opMode) {
-    robot = opMode->getRobot();
-    feeder = opMode->getFeeder();
-    debug = new Debug("/Subsystems/Shooter");
+Shooter::Shooter(Robot *robot) {
+    this->robot = robot; // Save robot pointer
+    debug = new Debug("/Subsystems/Shooter"); // Initialize the debug object
+    shooterMotor = new CANSparkMax(SHOOTER_1, rev::CANSparkMax::MotorType::kBrushless);
+    wheelSpeed = 0; // Set the saved speed to 0
 }
 
-bool Shooter::spinUp() {
-    
+void Shooter::spinUpWheel() {
+    debug->PutNumber("Spin speed", wheelSpeed); // Log speed
+    if (wheelSpeed != 0) {
+        shooterMotor->Set(wheelSpeed);
+    }
 }
 
-// Wheel Functions
-// bool spinUp();
-// void setSpinSpeed(float speed/*speed in rpm*/);
-// void stopSpin();
-// bool targetSpeed();
+void Shooter::spinUpWheel(float speed) {
+    wheelSpeed = speed; // Save the speed
+    debug->PutNumber("Spin speed", wheelSpeed); // Log speed
+    shooterMotor->Set(speed); // Actually set the motor
+}
 
-// // Hood
-// void moveHood();
-// bool setHood(int angle /*units is encoder ticks*/);
-// bool hoodAimed();
-// void rotateHood(float speed);
+void Shooter::stopWheel() {
+    wheelSpeed = 0;
+    shooterMotor->StopMotor();
+}
 
-// // Turret Functions
-// bool aim();
-// bool isAimed();
-// void rotateTurret(float speed);
+bool Shooter::isTargetSpeed() {
+    return true;
+}

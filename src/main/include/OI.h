@@ -20,9 +20,8 @@ class OI {
   double TopFeeder();
   bool extended;
   void testFunction();
-  
-  
-  
+  double shooterSpeed();
+
   float fForward();
   float fRotate();
 

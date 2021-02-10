@@ -6,32 +6,70 @@
 
 #include "Robot.h"
 #include "Feeder.h"
-#include "OpMode.h"
 #include "Debug.h"
+#include <rev/CANSparkMax.h>
 
+using rev::CANSparkMax;
+
+/**
+ * The class that controls the shooter wheel,
+ * aiming the turret, and rotating the hood.
+ * 
+ * Authors: Sam & Ash
+ */
 class Shooter {
   public:
-    OpMode *opMode;
-    Robot *robot;
-    Feeder *feeder;
-    Debug *debug;
+    /**
+     * Constructor, needs a reference
+     * to the robot to access OI
+     * 
+     * @param robot Pointer to the robot
+     */
+    Shooter(Robot *robot);
 
-    Shooter(OpMode *opMode);
+    /**
+     * Set the speed of the wheel
+     * 
+     * @param speed The speed of the wheel
+     */
+    void spinUpWheel(float speed);
 
-    // Wheel Functions
-    bool spinUp();
-    void setSpinSpeed(float speed/*speed in rpm*/);
-    void stopSpin();
-    bool targetSpeed();
+    /**
+     * Hold the previous speed of the wheel,
+     * keeps the motor watchdog happy.
+     */
+    void spinUpWheel();
 
-    // Hood
+    /**
+     * Stops the wheel, shorthand for 
+     * spinUpWheel(0), may be used to
+     * do more in the future so avoid
+     * directly calling spinUpWheel(0)
+     */
+    void stopWheel();
+
+    /**
+     * Use to check if the motor is
+     * ready to be shot.
+     * 
+     * @returns Whether the motor is at 
+     *          the target speed.
+     */
+    bool isTargetSpeed();
+
+    //TODO: implement these things, they do nohing
     void moveHood();
     bool setHood(int angle /*units is encoder ticks*/);
     bool hoodAimed();
     void rotateHood(float speed);
 
-    // Turret Functions
     bool aim();
     bool isAimed();
     void rotateTurret(float speed);
+
+  private:
+    CANSparkMax *shooterMotor;
+    float wheelSpeed;
+    Debug *debug;
+    Robot *robot;
 };

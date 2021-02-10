@@ -15,7 +15,7 @@
 
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
-#include "ctre\Phoenix.h"
+#include "ctre/Phoenix.h"
 #include "AHRS.h"
 #include <frc/PowerDistributionPanel.h>
 #include <iostream>
@@ -30,6 +30,9 @@
 #include "frc/XboxController.h"
 #include "frc/DoubleSolenoid.h"
 
+#include "OpMode.h"
+#include "OpModes/TestTeleop1.h"
+#include "OpModes/TestTeleop2.h"
 #include "Debug.h"
 #include "OI.h"
 #include "frc/SpeedControllerGroup.h"
@@ -49,8 +52,6 @@ class Robot : public frc::TimedRobot {
   void TestInit() override;
   void TestPeriodic() override;
 
-<<<<<<< HEAD
-=======
   std::vector<OpMode> AutoModes;
   std::vector<OpMode> TeleopModes;
 
@@ -86,7 +87,6 @@ class Robot : public frc::TimedRobot {
 frc::DoubleSolenoid   Intake_Solenoid{CAN_PCM, INTAKE_OUT, INTAKE_IN};
 
   
->>>>>>> origin/dev
  private:
   
 };
