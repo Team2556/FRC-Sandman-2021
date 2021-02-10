@@ -9,12 +9,6 @@ Feeder::Feeder(Robot * pRobot)
     this-> pRobot = pRobot;
 }
 
-// void Feeder::SetIntake()
-// {
-// pRobot->Extended = false;
-    //
-    // Feeder::IntakeExtendRetract(true) }
-
 void Feeder::IntakeExtendRetract(bool Extended)
 {
     if (Extended == false)
@@ -42,10 +36,7 @@ case 0:
     Intake_Motor.Set(0);
     break;
 }
-
-
 }
-
 
 void Feeder::BottomFeeder(int speed)
 {

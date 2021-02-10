@@ -3,8 +3,15 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #pragma once
+#include "RobotMap.h"
+#include "ctre/Phoenix.h"
+//#include <Servo.h>
 
 class ControlPannel {
  public:
   ControlPannel();
+
+WPI_TalonSRX    CtrlPanelMotor{CPMOTOR};
+//frc::Servo      CtrlServo{CPSERVO};
+
 };

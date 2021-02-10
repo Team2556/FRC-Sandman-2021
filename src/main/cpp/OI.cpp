@@ -13,28 +13,21 @@ void OI::Test()
 
 }
 
-// void OI::SetExtension() //Run in init
-// {
-//     extended = false;
-//     frc::SmartDashboard::PutBoolean("Extension", extended);
-// }
 
 bool OI::IntakeExtension()
 {
-if (Xbox2.GetYButtonPressed())//&& extended == false)
+if (Xbox2.GetYButtonPressed())
     {
         extended = false; //Goes up
 
-        //frc::SmartDashboard::PutBoolean("Extension", extended);
     }
-else if (Xbox2.GetXButtonPressed())// && extended == true)
+else if (Xbox2.GetXButtonPressed())
     {
         extended = true; //goes down
-        //frc::SmartDashboard::PutBoolean("Extension", extended);
     } 
 
 return extended;
-
+//Extended is passed into function that controls the actual extension of the robot. 
 }
 
 int OI::RunIntake()
@@ -53,7 +46,7 @@ else                            //Nothing
     {   
         speed = 0;
     }
-//frc::SmartDashboard::PutNumber("Intake Speed", speed);
+//Speed integer controls the speed of the intake system. 
 return speed;
 
 }
@@ -69,21 +62,19 @@ int OI::BottomFeeder()
     if (Xbox2.GetPOV() == 270 || Xbox2.GetPOV() == 0)
     {
         x = 1;
-        //frc::SmartDashboard::PutString("Bottom Feeder", "1");
     }
 
     else if (Xbox2.GetPOV() == 180 || Xbox2.GetBumper(frc::XboxController::kRightHand))
     {
         x = -1;
-        //frc::SmartDashboard::PutString("Bottom Feeder", "-1");
     }
 
     else
     {
         x = 0;
-        //frc::SmartDashboard::PutString("Bottom Feeder", "0");
     }
     return x;
+    //Integer x controls the speed of the bottom feeder.
 }
 
 double OI::TopFeeder()

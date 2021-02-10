@@ -12,8 +12,7 @@ class Feeder {
  public:
   Feeder(Robot * pRobot);
   Robot * pRobot;
-  // Intake
-  //void SetIntake();
+
   bool IsExtended();
   void KeepExtending(); // used to keep intake moving to target. Only needed if we use a motor to exend rather than pistons
   void IntakeExtendRetract(bool Extended);

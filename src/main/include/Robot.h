@@ -12,13 +12,11 @@
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
-#include <ctre/Phoenix.h>
 #include "RobotMap.h"
 #include "OI.h"
 
 #include <frc/TimedRobot.h>
 #include <frc/smartdashboard/SendableChooser.h>
-#include "ctre\Phoenix.h"
 #include "AHRS.h"
 #include <frc/PowerDistributionPanel.h>
 #include <iostream>
